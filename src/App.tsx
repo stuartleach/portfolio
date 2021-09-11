@@ -22,16 +22,22 @@ import Works from './Works'
 function App(props: object): JSX.Element {
 	return (
 		<Box>
-			<Parallax pages={2} style={{ top: '0', left: '0' }}>
+			<Parallax
+				pages={4.7}
+				style={{
+					top: '0',
+					left: '0',
+				}}
+			>
 				<Box color='white' fontFamily='roboto'>
 					<Box
 						className='App'
 						backgroundImage={backgroundThing}
-						backgroundPosition='bottom'
+						backgroundPosition=''
 						backgroundSize='cover'
 						bgColor='black'
-						// backgroundRepeat='no-repeat'
-						height='300vh'
+						backgroundRepeat='no-repeat'
+						height='500vh'
 						zIndex='-1'
 					>
 						<ParallaxLayer
@@ -41,6 +47,7 @@ function App(props: object): JSX.Element {
 								display: 'flex',
 								justifyContent: 'center',
 								alignItems: 'center',
+								position: 'static',
 								// height: '100%',
 							}}
 						>
@@ -49,25 +56,23 @@ function App(props: object): JSX.Element {
 							</Center>
 						</ParallaxLayer>
 
-						<ParallaxLayer
-							offset={1}
-							speed={1.5}
-							style={{
-								// display: 'block',
-								justifyContent: 'center',
-								alignItems: 'center',
-								color: 'white',
-								overflow: 'scroll',
-							}}
-						>
-							<Works />
-
-							<Box position='relative' marginTop='10vh' mb='20px'>
-								<Footer />
-							</Box>
-						</ParallaxLayer>
+						<Works />
 					</Box>
 				</Box>
+				<ParallaxLayer
+					offset={4.2}
+					speed={1}
+					style={
+						{
+							// display: 'flex',
+							// position: 'relative',
+							// justifyContent: 'center',
+							// alignItems: 'center',
+						}
+					}
+				>
+					<Footer />
+				</ParallaxLayer>
 			</Parallax>
 		</Box>
 	)

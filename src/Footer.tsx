@@ -54,7 +54,6 @@ export default function Footer() {
 									w='30px'
 									style={{
 										transitionDuration: '1s',
-										// filter: 'invert(60%) sepia(100%) hue-rotate(180deg)',
 									}}
 									_hover={{
 										opacity: '.5',

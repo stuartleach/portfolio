@@ -1,4 +1,4 @@
-import { Box, Container } from '@chakra-ui/layout'
+import { Box, Container, Center } from '@chakra-ui/layout'
 import morningPageBgPic from './mppic.png'
 import loveLeachBgPic from './llpic.png'
 import scraperBgPic from './scrapepic.png'
@@ -8,6 +8,7 @@ import { GridItem } from '@chakra-ui/layout'
 // import * as chakra from '@chakra-ui/react'
 import { createBreakpoints, whiten } from '@chakra-ui/theme-tools'
 import { Badge, LinkOverlay, Link, Text, Flex } from '@chakra-ui/react'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 const breakpoints = createBreakpoints({
 	sm: '30em',
@@ -62,9 +63,18 @@ export default function Works() {
 	const allWorks: Work[] = [morningPage, loveLeach, venueScraper]
 
 	return (
-		<Box display=''>
-			<Box width='100vw'>
-				{allWorks.map((work) => (
+		<Box>
+			{allWorks.map((work, i) => (
+				<ParallaxLayer
+					offset={i + 1.5}
+					speed={0.25}
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						overflow: 'wrap',
+					}}
+				>
 					<Badge mt='100px'>
 						<Box
 							m='20px'
@@ -72,8 +82,9 @@ export default function Works() {
 							borderRadius='20px'
 							backgroundPosition='center'
 							backgroundSize='cover'
-							height='50vh'
+							// height='50vh'
 							float='left'
+							// w='50vw'
 						>
 							<Link
 								href={
@@ -83,13 +94,13 @@ export default function Works() {
 								{work.bgPic && (
 									<Image
 										src={work.bgPic}
-										// width='20vw'
+										width='70%'
 										borderRadius='5%'
 										// overflow=''
 										// height='10vh'
 										// objectFit='scale-down'
 										// maxWidth='20vw'
-										maxHeight='20vh'
+
 										style={{
 											transitionDuration: '1s',
 										}}
@@ -99,50 +110,62 @@ export default function Works() {
 									/>
 								)}
 							</Link>
-							<br />
-							<Text align='left' fontSize='40' fontWeight='800'>
-								{work.name} <br />
-							</Text>
-							<Text align='left' m='0' p='0'>
-								<Link
-									textAlign='left'
-									// textDecoration='none'
-									style={{
-										color: 'white',
-									}}
-									_hover={{ color: 'red' }}
-									href={work.repoUrl}
-								>
-									<code>View code on Github</code>
-								</Link>
-							</Text>
-							<br />
-							<Box
-								align='left'
-								width='400px'
-								style={{}}
-								_hover={{}}
-								m='0'
-								p='0'
-							>
-								<Text
+							<Center>
+								<Container
+									width='60%'
 									wordWrap='break-word'
 									whiteSpace='pre-wrap'
 								>
-									<em>{work.description}</em>
-								</Text>
-								<Text
-									wordWrap='break-word'
-									whiteSpace='pre-wrap'
-									fontWeight='500'
-								>
-									{work.cv}
-								</Text>
-							</Box>
+									<br />
+									<Text
+										align='left'
+										fontSize='40'
+										fontWeight='800'
+									>
+										{work.name} <br />
+									</Text>
+									<Text align='left' m='0' p='0'>
+										<Link
+											textAlign='left'
+											// textDecoration='none'
+											style={{
+												color: 'white',
+											}}
+											_hover={{ color: 'red' }}
+											href={work.repoUrl}
+										>
+											<code>View code on Github</code>
+										</Link>
+									</Text>
+									<br />
+									<Box
+										align='left'
+										// width='80vw'
+										style={{}}
+										_hover={{}}
+										m='0'
+										p='0'
+									>
+										<Text
+											wordWrap='break-word'
+											whiteSpace='pre-wrap'
+										>
+											<em>{work.description}</em>
+										</Text>
+										<Text
+											wordWrap='break-word'
+											whiteSpace='pre-wrap'
+											fontWeight='500'
+										>
+											{work.cv}
+										</Text>
+									</Box>
+								</Container>
+							</Center>
 						</Box>
 					</Badge>
-				))}
-			</Box>
+				</ParallaxLayer>
+			))}
 		</Box>
 	)
 }

@@ -9,7 +9,7 @@ const Header = () => {
 					<Text align='left' fontSize='3vw'>
 						<code>
 							<Text
-								fontSize='20px'
+								fontSize='1.5vw'
 								// mt='100px'
 								textAlign='right'
 								position='static'

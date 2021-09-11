@@ -3,13 +3,13 @@ import { Text, Box, Container } from '@chakra-ui/layout'
 const Header = () => {
 	return (
 		<Box>
-			<Container fontWeight='600' fontSize='8vw' mt='20vh'>
-				<Box letterSpacing='-0.222vw'>Hi, I'm Stuart Leach</Box>
+			<Container fontWeight='600' mt='20vh' textAlign='right'>
+				<Box fontSize='7em'>Hi, I'm Stuart Leach</Box>
 				<Box>
-					<Text align='left' fontSize='3vw'>
+					<Text align='right' fontSize=''>
 						<code>
 							<Text
-								fontSize='1.5vw'
+								fontSize='2em'
 								// mt='100px'
 								textAlign='right'
 								position='static'

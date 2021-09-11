@@ -14,48 +14,68 @@ import {
 	Image,
 } from '@chakra-ui/react'
 import Header from './Header'
-import faceThing from './wFA9wU01.svg'
-import backgroundThing from './Wave-10s-1323px.svg'
+import backgroundThing from './bg1.svg'
 import Footer from './Footer'
-
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Works from './Works'
 
 function App(props: object): JSX.Element {
 	return (
-		<Box color='white' fontFamily='roboto'>
-			<Box
-				className='App'
-				backgroundImage={backgroundThing}
-				backgroundPosition='top'
-				backgroundSize='cover'
-				backgroundRepeat='no-repeat'
-				height='200vh'
-				zIndex='-1'
-			>
-				<Image
-					height='200px'
-					borderRadius='100%'
-					position='fixed'
-					zIndex='-2'
-					src={faceThing}
-				></Image>
-				<Center>
-					<Header />
-				</Center>
-				<Works />
+		<Parallax pages={2} style={{ top: '0', left: '0' }}>
+			<Box color='white' fontFamily='roboto'>
 				<Box
-					position='absolute'
-					bottom='0px'
-					width='100%'
-					p='0'
-					display='flex'
-					maxHeight='50%'
-				></Box>
+					className='App'
+					backgroundImage={backgroundThing}
+					backgroundPosition='top'
+					backgroundSize='cover'
+					bgColor='black'
+					// backgroundRepeat='no-repeat'
+					height='200vh'
+					zIndex='-1'
+				>
+					<ParallaxLayer
+						offset={0}
+						speed={-2.5}
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<Center>
+							<Header />
+						</Center>
+					</ParallaxLayer>
+
+					<ParallaxLayer
+						offset={1}
+						speed={1.5}
+						style={{
+							display: 'block',
+							justifyContent: 'center',
+							alignItems: 'center',
+							color: 'white',
+						}}
+					>
+						<Works />
+
+						<Box position='relative' marginTop='10vh'>
+							<Footer />
+						</Box>
+					</ParallaxLayer>
+					<ParallaxLayer
+						offset={2}
+						speed={1.5}
+						style={{
+							display: 'inline-block',
+							justifyContent: 'center',
+							alignItems: 'center',
+							color: 'white',
+						}}
+					></ParallaxLayer>
+				</Box>
 			</Box>
-			<Box position='relative' marginBottom='40px'>
-				<Footer />
-			</Box>
-		</Box>
+		</Parallax>
 	)
 }
 

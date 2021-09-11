@@ -34,7 +34,7 @@ function App(props: object): JSX.Element {
 						className='App'
 						backgroundImage={backgroundThing}
 						backgroundPosition=''
-						backgroundSize='cover'
+						backgroundSize='auto 100%'
 						bgColor='black'
 						backgroundRepeat='no-repeat'
 						height='500vh'
@@ -42,7 +42,7 @@ function App(props: object): JSX.Element {
 					>
 						<ParallaxLayer
 							offset={0}
-							speed={-2.5}
+							speed={3}
 							style={{
 								display: 'flex',
 								justifyContent: 'center',

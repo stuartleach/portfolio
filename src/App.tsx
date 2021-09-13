@@ -42,7 +42,7 @@ function App(props: object): JSX.Element {
 					>
 						<ParallaxLayer
 							offset={0}
-							speed={3}
+							speed={0}
 							style={{
 								display: 'flex',
 								justifyContent: 'center',

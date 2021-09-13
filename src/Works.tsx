@@ -30,7 +30,7 @@ interface Work {
 export default function Works() {
 	const morningPage: Work = {
 		name: 'Morning Page',
-		liveUrl: 'https://morning-page.onrender.com/',
+		liveUrl: 'https://words.stuartlea.ch/',
 		repoUrl: 'https://github.com/stuartleach/morningpage',
 		description:
 			'Full-stack journaling application for web and mobile, based on Julia Cameron’s “Morning Pages.”',

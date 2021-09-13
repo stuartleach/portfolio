@@ -18,7 +18,6 @@ import backgroundThing from './bg1.svg'
 import Footer from './Footer'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Works from './Works'
-import Arrows from './Arrows'
 
 function App(props: object): JSX.Element {
 	return (
@@ -53,7 +52,7 @@ function App(props: object): JSX.Element {
 							}}
 						>
 							<Center>
-								<Header Arrows={Arrows} />
+								<Header />
 							</Center>
 						</ParallaxLayer>
 

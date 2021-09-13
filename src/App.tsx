@@ -53,7 +53,7 @@ function App(props: object): JSX.Element {
 							}}
 						>
 							<Center>
-								<Header />
+								<Header Arrows={Arrows} />
 							</Center>
 						</ParallaxLayer>
 

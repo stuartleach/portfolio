@@ -1,8 +1,8 @@
 import { Text, Box, Container } from '@chakra-ui/layout'
 
-import Arrows from './Arrows'
+// import Arrows from './Arrows'
 
-const Header = () => {
+const Header = (props: any) => {
 	return (
 		<Box>
 			<Container fontWeight='600' textAlign='right' p='80px'>
@@ -24,7 +24,7 @@ const Header = () => {
 							</Text>
 						</code>
 						<Box float='right' mr='40px' mt='-20px'>
-							<Arrows />
+							<props.Arrows />
 						</Box>
 					</Text>
 				</Box>

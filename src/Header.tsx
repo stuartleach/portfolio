@@ -1,6 +1,6 @@
 import { Text, Box, Container } from '@chakra-ui/layout'
 
-// import Arrows from './Arrows'
+import Arrows from './Arrows'
 
 const Header = (props: any) => {
 	return (
@@ -24,7 +24,7 @@ const Header = (props: any) => {
 							</Text>
 						</code>
 						<Box float='right' mr='40px' mt='-20px'>
-							<props.Arrows />
+							<Arrows />
 						</Box>
 					</Text>
 				</Box>

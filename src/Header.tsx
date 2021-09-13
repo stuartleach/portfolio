@@ -1,5 +1,7 @@
 import { Text, Box, Container } from '@chakra-ui/layout'
+
 import Arrows from './Arrows'
+
 const Header = () => {
 	return (
 		<Box>

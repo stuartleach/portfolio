@@ -73,7 +73,7 @@ const Header = (props: any) => {
 								textAlign='right'
 								position='static'
 							>
-								full-stack react developer
+								software engineer
 								<br />
 								<br />
 								pancake scientist

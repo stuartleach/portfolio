@@ -22,13 +22,7 @@ import Works from './Works'
 function App(props: object): JSX.Element {
 	return (
 		<Box>
-			<Parallax
-				pages={4.7}
-				style={{
-					top: '0',
-					left: '0',
-				}}
-			>
+	
 				<Box color='white' fontFamily='roboto'>
 					<Box
 						className='App'
@@ -37,43 +31,19 @@ function App(props: object): JSX.Element {
 						backgroundSize='auto 100%'
 						bgColor='black'
 						backgroundRepeat='no-repeat'
-						height='500vh'
+						height='1000vh'
 						zIndex='-1'
 					>
-						<ParallaxLayer
-							offset={0}
-							speed={1}
-							style={{
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center',
-								position: 'static',
-								// height: '100%',
-							}}
-						>
+					
 							<Center>
 								<Header />
 							</Center>
-						</ParallaxLayer>
+
 
 						<Works />
 					</Box>
 				</Box>
-				<ParallaxLayer
-					offset={4.2}
-					speed={1}
-					style={
-						{
-							// display: 'flex',
-							// position: 'relative',
-							// justifyContent: 'center',
-							// alignItems: 'center',
-						}
-					}
-				>
 					<Footer />
-				</ParallaxLayer>
-			</Parallax>
 		</Box>
 	)
 }

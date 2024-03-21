@@ -10,14 +10,6 @@ import { createBreakpoints, whiten } from '@chakra-ui/theme-tools'
 import { Badge, LinkOverlay, Link, Text, Flex } from '@chakra-ui/react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
-const breakpoints = createBreakpoints({
-	sm: '30em',
-	md: '48em',
-	lg: '62em',
-	xl: '80em',
-	'2xl': '96em',
-})
-
 interface Work {
 	name: string
 	liveUrl?: string
@@ -41,7 +33,7 @@ export default function Works() {
 
 	const loveLeach: Work = {
 		name: 'Artist Website',
-		liveUrl: 'https://loveleach.com/',
+		liveUrl: 'https://leach.band/',
 		repoUrl: 'https://github.com/stuartleach/loveleach',
 		description:
 			'Artist website to grow band, solidify brand, stream songs, and offer merchandise.',
@@ -60,21 +52,23 @@ export default function Works() {
 		bgPic: scraperBgPic,
 	}
 
-	const allWorks: Work[] = [morningPage, loveLeach, venueScraper]
+	const portfolio: Work = {
+		name: 'Portfolio',
+		liveUrl: 'https://stuartlea.ch/',
+		repoUrl: 'https://github.com/stuartleach/portfolio',
+		description:
+			'Portfolio website to showcase my work and provide a way to contact me.',
+		cv: 'Built with Chakra UI and React. Used React Spring for animations. ',
+		iconUrl: '',
+		bgPic: '',
+	}
+
+	const allWorks: Work[] = [morningPage, loveLeach, venueScraper, portfolio]
 
 	return (
 		<Box>
 			{allWorks.map((work, i) => (
-				<ParallaxLayer
-					offset={i + 1.5}
-					speed={0.25}
-					style={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						overflow: 'wrap',
-					}}
-				>
+		
 					<Badge mt='100px'>
 						<Box
 							m='20px'
@@ -83,6 +77,7 @@ export default function Works() {
 							backgroundPosition='center'
 							backgroundSize='cover'
 							// height='50vh'
+							height='20vh'
 							float='left'
 							// w='50vw'
 						>
@@ -164,7 +159,6 @@ export default function Works() {
 							</Center>
 						</Box>
 					</Badge>
-				</ParallaxLayer>
 			))}
 		</Box>
 	)
